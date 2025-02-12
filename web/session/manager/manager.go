@@ -8,6 +8,7 @@ import (
 	"time"
 )
 
+// Manager 胶水作用，方便用户操作
 type Manager struct {
 	session.Store
 	session.Propagator

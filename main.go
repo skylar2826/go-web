@@ -139,25 +139,6 @@ func NewWebServer() {
 	_ = s.Start("127.0.0.1:8081")
 }
 
-//type User struct {
-//	Name     string `json:"Name"`
-//	Password string `json:"Password"`
-//}
-//
-//func transfer(u interface{}) {
-//	data := []byte(`{"Name":"123", "Password": "123"}`)
-//	fmt.Println(data)
-//	err := json.Unmarshal(data, u)
-//	if err != nil {
-//		log.Println(err)
-//	}
-//
-//}
-
 func main() {
-	//u := &User{}
-	//
-	//transfer(u)
-	//fmt.Println(u)
 	NewWebServer()
 }

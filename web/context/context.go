@@ -12,13 +12,13 @@ import (
 
 type Context struct {
 	W              http.ResponseWriter
+	R              *http.Request
 	RespStatusCode int
 	RespData       []byte
-	R              *http.Request
-	PathParams     map[string]string
+	PathParams     map[string]string // 参数路径中的参数
 	MatchRoute     string
 	templateEngine template.TemplateEngine
-	UserValues     map[string]any
+	UserValues     map[string]any // session缓存
 }
 
 func (c *Context) ReadJson(val interface{}) error {

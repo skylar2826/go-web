@@ -11,6 +11,7 @@ type Session interface {
 	ID() string
 }
 
+// Store 管理session
 type Store interface {
 	Generate(c *context.Context, id string) (Session, error)
 	Get(c *context.Context, id string) (Session, error)
@@ -18,6 +19,7 @@ type Store interface {
 	Refresh(c *context.Context, id string) error
 }
 
+// Propagator 将session关联http.cookie中
 type Propagator interface {
 	Inject(id string, w http.ResponseWriter) error
 	Extract(r *http.Request) (string, error)
